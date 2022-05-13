@@ -269,24 +269,7 @@
         </script>
         <script>
             
-            var submitButton = document.getElementById('submitButton');
-            submitButton.addEventListener('click', function(e){
-                e.preventDefault()
-                var name = document.getElementById('name').value;
-                var email = document.getElementById('email').value;
-                var msg = document.getElementById('msg').value;
-                var body = 'name: ' + name + '<br/> email: ' + email + '<br/> message' + message;
- 
-            Email.send({
-                SecureToken : "42d99ece-4058-4e23-95b3-ea1cd2ae2c22",
-                To : 'uukinaulf@gmail.com',
-                From : email,
-                Subject : "Contact Form",
-                Body : body
-            }).then(
-            message => alert(message)
-            );
-        })
+            
         </script>
 
     </body>
