@@ -112,12 +112,6 @@ let swiper = new Swiper(".portfolio__container", {
 
 /*==================== CONTACT ME BUTTON ====================*/
 
-var submitMessage = document.getElementById("submitButton"),
-  ContactForm = document.getElementById("ContactForm");
-
-submitMessage.addEventListener("click", () => {
-  ContactForm.submit();
-});
 
 /*==================== TESTIMONIAL ====================*/
 
