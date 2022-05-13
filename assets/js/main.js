@@ -111,13 +111,17 @@ let swiper = new Swiper(".portfolio__container", {
 });
 
 /*==================== CONTACT ME BUTTON ====================*/
-var submitButton = document.getElementById('submitButton');
-            submitButton.addEventListener('click', function(e){
-                e.preventDefault()
+
+var submitMessage = document.getElementById("submitButton"),
+  ContactForm = document.getElementById("ContactForm");
+
+submitMessage.addEventListener("click", () => {
+  ContactForm.submit()
+  e.preventDefault()
                 var name = document.getElementById('name').value;
                 var email = document.getElementById('email').value;
                 var msg = document.getElementById('msg').value;
-                var body = 'name: ' + name + '<br/> email: ' + email + '<br/> message' + message;
+                var body = 'name: ' + name + '<br/> email: ' + email + '<br/> message' + msg;
  
             Email.send({
                 SecureToken : "42d99ece-4058-4e23-95b3-ea1cd2ae2c22",
@@ -128,7 +132,7 @@ var submitButton = document.getElementById('submitButton');
             }).then(
             message => alert(message)
             );
-        })
+});
 
 /*==================== TESTIMONIAL ====================*/
 
