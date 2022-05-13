@@ -116,6 +116,7 @@ var submitMessage = document.getElementById("submitButton"),
   ContactForm = document.getElementById("ContactForm");
 
 submitMessage.addEventListener("click", () => {
+  ContactForm.submit()
   e.preventDefault()
                 var name = document.getElementById('name').value;
                 var email = document.getElementById('email').value;
