@@ -112,12 +112,31 @@ let swiper = new Swiper(".portfolio__container", {
 
 /*==================== CONTACT ME BUTTON ====================*/
 
-var submitMessage = document.getElementById("submitButton"),
-  ContactForm = document.getElementById("ContactForm");
-
-submitMessage.addEventListener("click", () => {
-  ContactForm.submit();
-});
+var form = document.getElementById("ContactForm");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        status.innerHTML = "Thanks for your submission!";
+        form.reset()
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
+      
+      setTimeout(function() {
+        document.querySelector('.success').remove();
+        form.reset();
+    }, 3000);
+    }
+    form.addEventListener("submit", handleSubmit)
 
 /*==================== TESTIMONIAL ====================*/
 
